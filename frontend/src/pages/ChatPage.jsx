@@ -103,7 +103,7 @@ const ChatPage = () => {
             <Window>
               <ChannelHeader />
               <MessageList />
-              <MessageInput focus />
+              <MessageInput focus className="md:w-[50%] w-full" />
             </Window>
           </div>
           <Thread />
