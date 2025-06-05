@@ -109,7 +109,6 @@ const toggleTheme = () => {
       <Chat
         client={chatClient}
         i18nInstance={streamI18n}
-        theme="str-chat__theme-dark"
       >
         <Channel channel={channel}>
           <div className="w-full relative ">

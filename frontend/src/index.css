@@ -32,12 +32,3 @@
 .str-chat__message-input {
   border-top: 1px solid #d70000;
 }
-.str-chat__theme-light {
-  --str-chat__surface-color: #424242;
-  --str-chat__secondary-surface-color: #212121;
-}
-
-.str-chat__theme-dark {
-  --str-chat__surface-color: #f5f5f5;
-  --str-chat__secondary-surface-color: #fafafa;
-}
