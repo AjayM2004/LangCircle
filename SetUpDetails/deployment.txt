@@ -10,3 +10,6 @@ step 5: if(process.env.NODE_ENV === 'production'){
 }
 step 6:create the NODE_ENV in .env file add assign production
 step 7: gitignore file should be on outside of frontend and backend and add .env file to them
+step 8:create repository in github
+step 9: git init  git add . and git commit -m "first commit"
+step 10:
