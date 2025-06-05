@@ -95,21 +95,49 @@ const ChatPage = () => {
   if (loading || !chatClient || !channel) return <ChatLoader />;
 
   return (
-    <div className="h-[100vh] md:h-[50vh]">
-      <Chat client={chatClient}>
-        <Channel channel={channel}>
-          <div className="w-full relative">
-            <CallButton handleVideoCall={handleVideoCall} className="md:w-[30%] w-full"/>
-            <Window>
-              <ChannelHeader />
+    // <div className="h-[100vh] md:h-[50vh]">
+    //   <Chat client={chatClient}>
+    //     <Channel channel={channel}>
+    //       <div className="w-full relative">
+    //         <CallButton handleVideoCall={handleVideoCall} className="md:w-[30%] w-full"/>
+    //         <Window>
+    //           <ChannelHeader />
+    //           <MessageList />
+    //           <MessageInput focus className="sm:w-[30%] w-full" />
+    //         </Window>
+    //       </div>
+    //       <Thread />
+    //     </Channel>
+    //   </Chat>
+    // </div>
+    <div className="h-screen md:h-[50vh] flex flex-col">
+  <Chat client={chatClient}>
+    <Channel channel={channel}>
+      <div className="w-full flex flex-col md:flex-row h-full">
+        {/* Left Panel - Call Button */}
+        <div className="w-full md:w-1/3 p-2 flex justify-center items-start">
+          <CallButton
+            handleVideoCall={handleVideoCall}
+            className="w-full md:w-auto bg-blue-600 text-white p-2 rounded-lg shadow-md"
+          />
+        </div>
+
+        {/* Right Panel - Chat Window */}
+        <div className="flex-1 p-2 flex flex-col h-full">
+          <Window>
+            <ChannelHeader />
+            <div className="flex-1 overflow-y-auto">
               <MessageList />
-              <MessageInput focus className="sm:w-[30%] w-full" />
-            </Window>
-          </div>
-          <Thread />
-        </Channel>
-      </Chat>
-    </div>
+            </div>
+            <MessageInput focus className="w-full mt-2" />
+          </Window>
+        </div>
+      </div>
+      <Thread />
+    </Channel>
+  </Chat>
+</div>
+
   );
 };
 export default ChatPage;
