@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import useAuthUser from "../hooks/useAuthUser";
 import { useQuery } from "@tanstack/react-query";
 import { getStreamToken } from "../lib/api";
-import { Streami18n } from "stream-chat-react";
+
 import {
   Channel,
   ChannelHeader,
@@ -22,16 +22,6 @@ import CallButton from "../components/CallButton";
 const STREAM_API_KEY = import.meta.env.VITE_STREAM_API_KEY;
 
 const ChatPage = () => {
-  const [currentTheme, setCurrentTheme] = useState("str-chat__theme-light");
-
-const toggleTheme = () => {
-  setCurrentTheme(prevTheme => 
-    prevTheme === "str-chat__theme-light" 
-      ? "str-chat__theme-dark" 
-      : "str-chat__theme-light"
-  );
-};
-  const streamI18n = new Streami18n({ timezone: "Asia/Kolkata" });
   const { id: targetUserId } = useParams();
 
   const [chatClient, setChatClient] = useState(null);
@@ -105,13 +95,10 @@ const toggleTheme = () => {
   if (loading || !chatClient || !channel) return <ChatLoader />;
 
   return (
-    <div className="h-[93vh] ">
-      <Chat
-        client={chatClient}
-        i18nInstance={streamI18n}
-      >
+    <div className="h-[93vh]">
+      <Chat client={chatClient}>
         <Channel channel={channel}>
-          <div className="w-full relative ">
+          <div className="w-full relative">
             <CallButton handleVideoCall={handleVideoCall} />
             <Window>
               <ChannelHeader />
