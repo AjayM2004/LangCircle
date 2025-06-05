@@ -99,11 +99,11 @@ const ChatPage = () => {
       <Chat client={chatClient}>
         <Channel channel={channel}>
           <div className="w-full relative">
-            <CallButton handleVideoCall={handleVideoCall} />
+            <CallButton handleVideoCall={handleVideoCall} className="md:w-[30%] w-full"/>
             <Window>
               <ChannelHeader />
               <MessageList />
-              <MessageInput focus className="md:w-[50%] w-full" />
+              <MessageInput focus className="md:w-[30%] w-full" />
             </Window>
           </div>
           <Thread />
