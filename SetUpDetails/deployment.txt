@@ -1,0 +1,12 @@
+step 1: npm init -y outside of frontend and backend
+step 2: "build":"npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
+place it in the scripts
+step 3: "start": "npm run start --prefix backend" place it in the scripts
+run that npm run build then run that npm run start
+step 4: import path module in the backend server.js
+step 5: if(process.env.NODE_ENV === 'production'){
+   app.use(express.static(path.join(__dirname, "/frontend/dist")));
+   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')));
+}
+step 6:create the NODE_ENV in .env file add assign production
+step 7: gitignore file should be on outside of frontend and backend and add .env file to them

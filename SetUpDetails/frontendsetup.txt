@@ -1,0 +1,27 @@
+step 1 : cd frontend
+step 2 : npm create vite@latest .
+step 3 : choose react
+step 4 : npm install
+step 5 : npm run dev
+step 6 : tailwind set up for vite app
+for daisy ui tailwind css
+step 7 : npm i -D daisyui@4.12.24
+step 8 : config tailwind.config.js
+add this one  plugins: [daisyui]
+add all themes after to plugins
+step 9: npm i react-router
+step 10: set up react-toast
+step 11: npm i react-hot-toast
+step 12: tanstack set up
+docs->installation->quickstart
+step 13: npm i @tanstack/react-query
+// Create a client
+const queryClient = new QueryClient()
+put it in main.jsx
+step 14: npm i lucide-react
+step for chat page
+npm i stream-chat-react
+step for video call page
+npm i stream-io/video-react-sdk
+
+

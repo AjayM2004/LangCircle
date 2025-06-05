@@ -1,0 +1,4 @@
+setting up backend
+step 1 : npm init -y
+step 2 : copy paste the dependencies from git in package.json
+step 3 : npm install
