@@ -20,84 +20,87 @@
   overflow: hidden;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .str-chat__container {
-    max-width: 100%;
-    height: 100% !important;
-    margin: 0 !important;
-    border-radius: 0;
-  }
-  
-  .str-chat__channel {
-    padding: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .str-chat__list {
-    padding: 8px;
-  }
-  
-  .str-chat__message-input {
-    padding: 8px;
-  }
-}
-
-.str-chat__list {
-  background-color: #ffffff;
-  padding: 12px;
-}
-
-.str-chat__list-notifications {
-  display: none;
-}
-
-.str-chat__message-input {
-  border-top: 1px solid #ddd;
-}
 .responsive-chat-container {
-  width: 100%;
+  display: flex;
   height: 100%;
 }
 
-@media (max-width: 400px) {
-  .responsive-chat-container {
-    zoom: 0.5;
-    transform-origin: top left;
-  }
+.str-chat__channel-list {
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  width: 0;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 320px) {
-  .responsive-chat-container {
-    zoom: 0.4;
-    transform-origin: top left;
-  }
+.str-chat__channel-list--open {
+  width: 30%;
+  position: fixed;
 }
 
-@media (max-width: 280px) {
-  .responsive-chat-container {
-    zoom: 0.35;
-    transform-origin: top left;
-  }
+.str-chat__channel {
+  flex: 1;
+  min-width: 0;
 }
 
-.str-chat-channel {
-  width: 100% !important;
-  height: 100% !important;
+.str-chat__main-panel {
+  min-width: 0;
+  flex: 1;
+}
+
+.str-chat__main-panel--thread-open {
+  display: none;
 }
 
 .str-chat__thread {
-  display: none !important;
+  flex: 1;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
 }
 
-@media (min-width: 768px) {
-  .str-chat__thread {
-    display: flex !important;
-    width: 300px !important;
+.str-chat__channel-header .str-chat__header-hamburger {
+  width: 30px;
+  height: 38px;
+  padding: var(--xxs-p);
+  margin-right: var(--xs-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .str-chat__channel-list {
+    width: 30%;
+    position: initial;
+    z-index: 0;
   }
-  
+
+  .str-chat__thread {
+    position: initial;
+    z-index: 0;
+  }
+
+  .str-chat__channel-header .str-chat__header-hamburger {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .str-chat__main-panel {
-    flex: 1 !important;
+    min-width: 0;
+  }
+
+  .str-chat__main-panel--thread-open {
+    max-width: 55%;
+    display: flex;
+  }
+
+  .str-chat__thread {
+    max-width: 45%;
   }
 }
