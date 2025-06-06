@@ -95,7 +95,7 @@ const ChatPage = () => {
   if (loading || !chatClient || !channel) return <ChatLoader />;
 
   return (
-    <div className="h-[100vh] md:h-[50vh]">
+    <div className="h-[93vh]">
       <Chat client={chatClient}>
         <Channel channel={channel}>
           <div className="w-full relative">
@@ -103,7 +103,7 @@ const ChatPage = () => {
             <Window>
               <ChannelHeader />
               <MessageList />
-              <MessageInput focus className="sm:w-[30%] w-full" />
+              <MessageInput focus />
             </Window>
           </div>
           <Thread />
