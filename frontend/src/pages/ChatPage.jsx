@@ -99,7 +99,7 @@ const ChatPage = () => {
       <Chat client={chatClient}>
         <Channel channel={channel}>
           <div className="w-full relative">
-            <CallButton handleVideoCall={handleVideoCall} className="md:w-[30%] w-full"/>
+            <CallButton handleVideoCall={handleVideoCall} />
             <Window>
               <ChannelHeader />
               <MessageList />
@@ -110,7 +110,6 @@ const ChatPage = () => {
         </Channel>
       </Chat>
     </div>
-
   );
 };
 export default ChatPage;
