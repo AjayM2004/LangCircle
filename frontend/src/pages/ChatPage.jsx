@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import useAuthUser from "../hooks/useAuthUser";
 import { useQuery } from "@tanstack/react-query";
 import { getStreamToken } from "../lib/api";
+import "../styles/ChatPage.css";
 
 import {
   Channel,
@@ -95,25 +96,22 @@ const ChatPage = () => {
   if (loading || !chatClient || !channel) return <ChatLoader />;
 
   return (
-    <div className="h-[93vh] w-full">
-      <Chat client={chatClient}>
-        <Channel 
-          channel={channel} 
-          className="w-full h-full flex flex-col sm:flex-row max-w-full"
-        >
-          <div className="w-full sm:w-3/4 md:w-4/5 lg:w-5/6 xl:w-3/4 relative flex-1 min-h-0">
-            <CallButton handleVideoCall={handleVideoCall} />
-            <Window className="h-full">
-              <ChannelHeader />
-              <MessageList />
-              <MessageInput focus />
-            </Window>
-          </div>
-          <div className="w-full sm:w-1/4 md:w-1/5 lg:w-1/6 xl:w-1/4 border-l border-gray-200 hidden sm:block">
+    <div className="h-[93vh]">
+      <div className="responsive-chat-container">
+        <Chat client={chatClient}>
+          <Channel channel={channel}>
+            <div className="w-full relative">
+              <CallButton handleVideoCall={handleVideoCall} />
+              <Window>
+                <ChannelHeader />
+                <MessageList />
+                <MessageInput focus />
+              </Window>
+            </div>
             <Thread />
-          </div>
-        </Channel>
-      </Chat>
+          </Channel>
+        </Chat>
+      </div>
     </div>
   );
 };
