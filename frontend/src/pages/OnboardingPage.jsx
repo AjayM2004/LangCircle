@@ -39,6 +39,7 @@ function OnboardingPage() {
     const randomAvatar = `https://avatar.iran.liara.run/public/${selectedGender}`;
 
     setFormState({ ...formState, profilePic: randomAvatar });
+    console.log(randomAvatar);
     toast.success(`Random ${selectedGender} profile picture generated!`);
   };
 
@@ -74,7 +75,7 @@ function OnboardingPage() {
                     name="gender"
                     value="boy"
                     checked={selectedGender === "boy"}
-                    onChange={(e) => setSelectedGender(e.target.value)}
+                    onClick={(e) => setSelectedGender(e.target.value)}
                     className="radio radio-primary mr-2"
                   />
                   <span className="label-text">Boy</span>
@@ -85,7 +86,7 @@ function OnboardingPage() {
                     name="gender"
                     value="girl"
                     checked={selectedGender === "girl"}
-                    onChange={(e) => setSelectedGender(e.target.value)}
+                    onClick={(e) => setSelectedGender(e.target.value)}
                     className="radio radio-primary mr-2"
                   />
                   <span className="label-text">Girl</span>
@@ -195,7 +196,7 @@ function OnboardingPage() {
             <button className="btn btn-primary w-full" disabled={isPending} type="submit">
               {!isPending ? (
                 <>
-                  <ShipWheelIcon className="size-5 mr-2" />
+                  <Earth className="size-5 mr-2" />
                   Complete Onboarding
                 </>
               ) : (
