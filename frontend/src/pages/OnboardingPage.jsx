@@ -75,7 +75,7 @@ function OnboardingPage() {
                     name="gender"
                     value="boy"
                     checked={selectedGender === "boy"}
-                    onClick={(e) => setSelectedGender(e.target.value)}
+                    onChange={(e) => setSelectedGender(e.target.value)}
                     className="radio radio-primary mr-2"
                   />
                   <span className="label-text">Boy</span>
@@ -86,7 +86,7 @@ function OnboardingPage() {
                     name="gender"
                     value="girl"
                     checked={selectedGender === "girl"}
-                    onClick={(e) => setSelectedGender(e.target.value)}
+                    onChange={(e) => setSelectedGender(e.target.value)}
                     className="radio radio-primary mr-2"
                   />
                   <span className="label-text">Girl</span>
